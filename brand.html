@@ -1,24 +1,23 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="LUSHI BRAND CLOTHING" content="width=device-width, initial-scale=1.0">
-    <title>TrendyWear - Urban Style</title>
-    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lushi Brand - Urban Style</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet" />
     <style>
+        /* === Nuk kam ndryshuar stilin nga origjinali === */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Permanent Marker', cursive;
             background-color: #1a202c;
             color: white;
             line-height: 1.6;
         }
-
         header {
             background-color: black;
             padding: 1rem;
@@ -26,24 +25,20 @@
             top: 0;
             z-index: 1000;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
-
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
         }
-
         .cart-button {
             background-color: white;
             color: black;
@@ -55,15 +50,12 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-
         .cart-button:hover {
             transform: scale(1.05);
         }
-
         .cart-button:active {
             transform: scale(0.95);
         }
-
         .offer-banner {
             background-color: #ecc94b;
             color: black;
@@ -72,17 +64,14 @@
             overflow: hidden;
             white-space: nowrap;
         }
-
         .offer-text {
             display: inline-block;
             animation: marquee 20s linear infinite;
         }
-
         @keyframes marquee {
             0% { transform: translateX(100%); }
             100% { transform: translateX(-100%); }
         }
-
         .hero {
             position: relative;
             height: 100vh;
@@ -92,22 +81,18 @@
             text-align: center;
             overflow: hidden;
         }
-
         .hero-content {
             position: relative;
             z-index: 1;
         }
-
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
         }
-
         .cta-button {
             background-color: white;
             color: black;
@@ -119,15 +104,12 @@
             cursor: pointer;
             transition: transform 0.3s ease;
         }
-
         .cta-button:hover {
             transform: scale(1.05);
         }
-
         .cta-button:active {
             transform: scale(0.95);
         }
-
         .hero-video {
             position: absolute;
             top: 0;
@@ -136,7 +118,6 @@
             height: 100%;
             object-fit: cover;
         }
-
         .hero-overlay {
             position: absolute;
             top: 0;
@@ -145,69 +126,56 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
         }
-
         .products {
             padding: 4rem 0;
         }
-
         .products h2 {
             font-size: 2.5rem;
             text-align: center;
             margin-bottom: 2rem;
         }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
         }
-
         @media (min-width: 768px) {
             .product-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
         }
-
         .product-card {
             background-color: #2d3748;
             border-radius: 0.5rem;
             overflow: hidden;
             transition: transform 0.3s ease;
         }
-
         .product-card:hover {
             transform: translateY(-5px);
         }
-
         .product-image {
             width: 100%;
             height: 200px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
-
         .product-card:hover .product-image {
             transform: scale(1.05);
         }
-
         .product-info {
             padding: 1rem;
         }
-
         .product-name {
             font-size: 1.25rem;
             margin-bottom: 0.5rem;
         }
-
         .product-price {
             color: #ecc94b;
             margin-bottom: 1rem;
         }
-
         .product-size {
             margin-bottom: 1rem;
         }
-
         .product-size select {
             width: 100%;
             padding: 0.5rem;
@@ -216,7 +184,6 @@
             border: 1px solid #4a5568;
             border-radius: 0.25rem;
         }
-
         .add-to-cart {
             width: 100%;
             background-color: #ecc94b;
@@ -228,16 +195,13 @@
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
-
         .add-to-cart:hover {
             background-color: #d69e2e;
             transform: scale(1.05);
         }
-
         .add-to-cart:active {
             transform: scale(0.95);
         }
-
         .cart-modal {
             display: none;
             position: fixed;
@@ -250,7 +214,6 @@
             justify-content: center;
             z-index: 2000;
         }
-
         .cart-content {
             background-color: #2d3748;
             padding: 2rem;
@@ -258,16 +221,13 @@
             max-width: 500px;
             width: 90%;
         }
-
         .cart-title {
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-
         .cart-items {
             margin-bottom: 1rem;
         }
-
         .cart-item {
             display: flex;
             justify-content: space-between;
@@ -276,17 +236,14 @@
             padding-bottom: 1rem;
             border-bottom: 1px solid #4a5568;
         }
-
         .cart-item-info h3 {
             font-size: 1rem;
             margin-bottom: 0.25rem;
         }
-
         .cart-item-info p {
             font-size: 0.875rem;
             color: #a0aec0;
         }
-
         .remove-item {
             background: none;
             border: none;
@@ -295,22 +252,19 @@
             font-size: 1.25rem;
             transition: transform 0.3s ease;
         }
-
         .remove-item:hover {
             transform: scale(1.1);
         }
-
         .cart-total {
             font-size: 1.25rem;
             font-weight: bold;
             margin-bottom: 1rem;
         }
-
         .cart-buttons {
             display: flex;
             gap: 1rem;
+            flex-wrap: wrap;
         }
-
         .cart-button {
             padding: 0.75rem;
             border: none;
@@ -318,45 +272,44 @@
             font-weight: bold;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            flex: 1 1 45%;
+            text-align: center;
         }
-
         .order-button {
             background-color: #48bb78;
             color: white;
         }
-
         .order-button:hover {
             background-color: #38a169;
         }
-
         .close-button {
             background-color: #4a5568;
             color: white;
         }
-
         .close-button:hover {
             background-color: #2d3748;
         }
-
         .cart-button:hover {
             transform: scale(1.05);
         }
-
         .cart-button:active {
             transform: scale(0.95);
         }
-
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 2rem;
             }
-
             .hero p {
                 font-size: 1rem;
             }
-
             .cta-button {
                 font-size: 1rem;
+            }
+            .cart-buttons {
+                flex-direction: column;
+            }
+            .cart-button {
+                flex: 1 1 100%;
             }
         }
     </style>
@@ -364,19 +317,19 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">AMS BRAND </div>
-            <button class="cart-button" id="cartButton">???? Cart (0)</button>
+            <div class="logo">Lushi Brand</div>
+            <button class="cart-button" id="cartButton">🛒 Cart (0)</button>
         </nav>
     </header>
 
     <div class="offer-banner">
-        <div class="offer-text">???? Offer: 20% off storewide with code STREET20 ????</div>
+        <div class="offer-text">🔥 Offer: 20% off storewide with code STREET20 🔥</div>
     </div>
 
     <section class="hero">
         <div class="hero-overlay"></div>
         <video class="hero-video" autoplay loop muted playsinline>
-            <source src="https://videos.pexels.com/video-files/6121230/6121230-uhd_2732_1440_25fps.mp4" type="video/mp4">
+            <source src="https://videos.pexels.com/video-files/6121230/6121230-uhd_2732_1440_25fps.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
         <div class="hero-content">
@@ -397,7 +350,8 @@
             <div id="cartItems" class="cart-items"></div>
             <div id="cartTotal" class="cart-total"></div>
             <div class="cart-buttons">
-                <button class="cart-button order-button" id="orderButton">Order via WhatsApp</button>
+                <button class="cart-button order-button" id="orderWhatsAppButton">Order via WhatsApp</button>
+                <button class="cart-button order-button" id="orderPayPalButton" style="background-color:#003087;">Pay with PayPal</button>
                 <button class="cart-button close-button" id="closeCartButton">Close</button>
             </div>
         </div>
@@ -410,10 +364,8 @@
             { id: 3, name: "Urban Sneakers", price: 79.99, sizes: ["38", "39", "40", "41", "42"], image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQXdL-nMbC61D5QGtvmMVAIO6pRLMOGKcAF0sTMT0Bvre86CZktqusEyKttpE8vs_u9oV4wX-wP8-LTLBB5pJ6t9EoH7NS5wjbLiTSLAs80mVDNpHcIDas-MWA" },
             { id: 4, name: "Flat Cap", price: 24.99, sizes: ["One Size"], image: "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTTBnXdvoAA4eKcbvX7Msl1FalPv2iil9G2_YaZLpjo20QJP7M3aoNVgeHFqWFwM9AcD4bPsopdTykZKqS22Vi9cZ7gaiJ6V0zJ-D2UWPIEhG2DhIDyPDsgaw" },
             { id: 5, name: "Graffiti T-Shirt", price: 29.99, sizes: ["S", "M", "L", "XL"], image: "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTtG3XWnFPeCI5szSCFbmEhqV2L71SbervTSDPumXl9FwNARDYIQCmjwmRXvs537BaFaVS6a7dQEc2GagM_Otzj5tv_LvBO44ALchcAsBBq8q5Fn18KKHWikQ" },
-            { id: 6, name: "Nike Tech", price: 29.99, sizes: ["S", "M", "L", "XL"], image: "https://images.stockx.com/images/Nike-Sportswear-Tech-Fleece-Full-Zip-Hoodie-Joggers-Set-Black-Black.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1694532792" },
-            { id: 7, name:  "Nike Air Force one ",price: 50.99, sizes: [38,39,40,41], image: "https://m.media-amazon.com/images/I/71R2zE31DJL._AC_SL1500_.jpg"}
-    
-     ]  
+            { id: 6, name: "Bomber Jacket", price: 89.99, sizes: ["S", "M", "L", "XL"], image: "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcQc50gC22wJuEQlxEoEbsktP3qS5AVdacrkOsAzZsUZTYQncm5WmAHBqSCHRtTrj7EAApFnoDDAbJYjKTECUm9e817wdsX5PV6TMmmQPpHAMYCRxoapozf4MQ" },
+        ];
 
         let cart = [];
 
