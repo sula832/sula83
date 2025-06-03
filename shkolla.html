@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shkolla "Tahir Sinani"</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f3f4f6;
+      color: #1f2937;
+    }
+    header {
+      background: linear-gradient(to right, #006400, #32cd32);
+      color: white;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #cecece;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    nav a {
+      padding: 15px 20px;
+      display: inline-block;
+      color: #324560;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      background-color: #1b2d4f;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 0 20px;
+      opacity: 0;
+      transform: translateY(50px);
+      transition: all 0.6s ease-out;
+    }
+    .section.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section h2 {
+      color: #11952e;
+    }
+    .gallery {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      max-width: 480px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(44, 31, 31, 0.1);
+    }
+    footer {
+      background-color: #1f2937;
+      color: rgb(255, 255, 255);
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const sections = document.querySelectorAll('.section');
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, {
+        threshold: 0.1
+      });
+      sections.forEach(section => {
+        observer.observe(section);
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Shkolla 9-Vjeçare "Tahir Sinani"</h1>
+    <p>Kodër e Kuqe, Paskuqan 1</p>
+  </header>
+
+  <nav>
+    <a href="#rreth-nesh">Rreth Nesh</a>
+    <a href="#galeria">Galeria</a>
+    <a href="#projekti">Projekti EU4SCHOOL</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
+
+  <section class="section" id="rreth-nesh">
+    <h2>Rreth Nesh</h2>
+    <p>Shkolla "Tahir Sinani" është një institucion edukativ që i ka dedikuar vite të shumta edukimit të brezave të rinj. Me staf të përkushtuar dhe mjedis gjithnjë e më të modernizuar, ne synojmë cilësi dhe zhvillim të vazhdueshëm.</p>
+    <p>Shkolla "Tahir Sinani" u ndërtua në vitin 2002 dhe që prej asaj kohe ka qenë një ndër institucionet më të rëndësishme edukative në zonën e Kodër e Kuqe, Paskuqan 1. Me kalimin e viteve, shkolla ka përjetuar transformime të rëndësishme, duke u rritur jo vetëm në numër nxënësish, por edhe në cilësi të mësimdhënies.</p>
+
+  <p>Ajo është e njohur për përkushtimin e stafit pedagogjik, bashkëpunimin me prindërit dhe përfshirjen e nxënësve në aktivitete të ndryshme jashtë mësimore si: olimpiada, aktivitete kulturore, ditë të hapura dhe konkurse artistike. Kjo ka ndihmuar në ndërtimin e një komuniteti të fortë dhe pozitiv për të rinjtë.</p>
+
+  <p>Pas vitit 2023, falë projektit EU4SCHOOL dhe mbështetjes së Bashkisë Kamëz, shkolla ka përfituar investime të mëdha në infrastrukturë, duke përfshirë: rikonstruksion të plotë të ndërtesës, sistem ngrohjeje, pajisje të reja teknologjike, kabinete shkencore dhe ambiente sportive moderne. Tani, shkolla ofron një mjedis të sigurt, të pastër dhe bashkëkohor për zhvillimin e nxënësve.</p>
+
+  <p>Vizioni ynë është të përgatisim breza të edukuar dhe të përgjegjshëm për shoqërinë, duke u bazuar në vlera të forta si respekti, përgjegjësia dhe bashkëpunimi. Ne besojmë se çdo fëmijë ka potencial të madh dhe është detyra jonë t’i ndihmojmë ata ta arrijnë atë.</p>
+
+  <p>Me një traditë prej mbi dy dekadash në fushën e edukimit, shkolla ka ndërtuar reputacionin e saj si një institucion që përqafon inovacionin dhe zhvillimin profesional të mësuesve. Çdo vit, në shkollën tonë diplomohen qindra nxënës të përgatitur për sfidat e shkollës së mesme dhe jetës.</p>
+
+  <p>Ambienti i shkollës është i pasuruar me hapësira të gjelbra, një bibliotekë funksionale, laboratorë të pajisur me kompjutra dhe laptopë. Aktivitetet e përbashkëta, kampionatet mes klasave dhe bashkëpunimet me shkolla të tjera janë pjesë e përditshmërisë sonë edukative.</p>
+
+  <p>Ne i japim përparësi përfshirjes së çdo nxënësi, pavarësisht prejardhjes apo nevojave të veçanta. Politikat e barazisë dhe përkujdesjes sociale janë të integruara në filozofinë tonë arsimore, duke siguruar që çdo fëmijë të ndjehet i mirëpritur dhe i vlerësuar.</p>
+</section>
+
+  </section>
+
+  <section class="section" id="galeria">
+    <h2>Galeria - Si ka qenë / Si është bërë</h2>
+    <div class="gallery">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCYSXcboCWbADQcxnrtZGv36EUPlJgfG7YJg&s" alt="Para rikonstruksionit">
+      <img src="https://photos.wikimapia.org/p/00/08/80/85/43_big.jpg" alt="Pas rikonstruksionit">
+    </div>
+  </section>
+
+  <section class="section" id="projekti">
+    <h2>Projekti EU4SCHOOL</h2>
+    <p>Ky transformim madhor është bërë i mundur falë projektit <strong>EU4SCHOOL</strong>, i cili synon të modernizojë infrastrukturat shkollore në të gjithë vendin. Bashkëpunimi me komunitetin dhe institucionet ka qenë thelbësor për këtë arritje.</p>
+  </section>
+
+  <section class="section" id="kontakt">
+    <h2>Kontakt</h2>
+    <p>Adresa: Kodër e Kuqe, Paskuqan 1<br>
+    Email: info@tahirsinani.edu.al<br>
+    Telefon: +355 69 000 0000</p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shkolla "Tahir Sinani". E zhvilluar me dashuri dhe kujdes. Projekti EU4SCHOOL.</p>
+  </footer>
+</body>
+</html>
+
