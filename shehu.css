@@ -1,0 +1,155 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  background: linear-gradient(135deg, #0077b6, #2e8b57); /* blu në jeshil */
+  color: white;
+}
+
+.background-overlay {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.hero {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 60px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.overlay h1,
+.overlay p {
+  position: relative;
+  z-index: 2;
+}
+
+.title {
+  font-size: 3.5em;
+  font-weight: bold;
+}
+
+.tagline {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+section {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+h2 {
+  color: #c8e6c9;
+  margin-bottom: 20px;
+}
+
+p, li, a {
+  font-size: 1.1em;
+  color: #e0f2f1;
+}
+
+.service-list {
+  columns: 2;
+  list-style: square;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.gallery .grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.gallery img {
+  width: 48%;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #1b5e20;
+  color: #a5d6a7;
+}
+
+.before-after {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 40px 20px;
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 15px;
+  text-align: center;
+}
+
+.image-pairs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.pair {
+  flex: 1 1 300px;
+}
+
+.pair img {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+/* Animation on scroll */
+.animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1.2s ease-out;
+}
+
+.animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .service-list {
+    columns: 1;
+  }
+
+  .gallery img,
+  .pair img {
+    width: 100%;
+  }
+
+  .title {
+    font-size: 2.2em;
+  }
+
+  .tagline {
+    font-size: 1.2em;
+  }
+}
+    
