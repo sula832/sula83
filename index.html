@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>I Love You</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+      overflow: hidden;
+      font-family: 'Arial', sans-serif;
+    }
+
+    canvas {
+      display: block;
+    }
+
+    h1 {
+      position: absolute;
+      bottom: 50px;
+      width: 100%;
+      text-align: center;
+      color: #ff4d4d;
+      font-size: 48px;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 10px red; }
+      to { text-shadow: 0 0 30px red, 0 0 60px pink; }
+    }
+
+    button {
+      position: absolute;
+      top: 20px;
+      background: #ff4d4d;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+      z-index: 10;
+    }
+
+    button:hover {
+      background: #ff1a1a;
+    }
+
+    #toggleMusic { right: 20px; }
+    #showMessage { left: 20px; }
+    #shareBtn { top: 70px; left: 20px; }
+
+    #secretMessage {
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 0, 100, 0.9);
+      padding: 30px;
+      border-radius: 15px;
+      color: white;
+      font-size: 24px;
+      display: none;
+      z-index: 20;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translate(-50%, -60%); }
+      to { opacity: 1; transform: translate(-50%, -50%); }
+    }
+
+    .emoji {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      animation: fall 5s linear infinite;
+    }
+
+    @keyframes fall {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(100vh); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+<h1>I Love You!</h1>
+
+<!-- Butonat -->
+<button id="showMessage">💌 Për Ty</button>
+<!-- Mesazhi Sekret -->
+<div id="secretMessage">Mke ndryshu jeten klea te dua shum 🥹🫀</div>
+
+<script>
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  let mouse = {
+    x: canvas.width / 2,
+    y: canvas.height / 2
+  };
+
+  const heartShape = () => {
+    let points = [];
+    for (let t = 0; t < Math.PI * 2; t += 0.1) {
+      let x = 16 * Math.pow(Math.sin(t), 3);
+      let y = -(13 * Math.cos(t) - 5 * Math.cos(2 * t) - 2 * Math.cos(3 * t) - Math.cos(4 * t));
+      points.push({x: x, y: y});
+    }
+    return points;
+  };
+
+  const heart = heartShape();
+  const particles = [];
+
+  for (let i = 0; i < 1000; i++) {
+    let p = heart[Math.floor(Math.random() * heart.length)];
+    particles.push({
+      x: canvas.width / 2 + p.x * 15,
+      y: canvas.height / 2 + p.y * 15,
+      size: Math.random() * 2 + 1,
+      baseX: canvas.width / 2 + p.x * 15,
+      baseY: canvas.height / 2 + p.y * 15
+    });
+  }
+
+  function animate() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < particles.length; i++) {
+      let dx = mouse.x - particles[i].x;
+      let dy = mouse.y - particles[i].y;
+      let distance = Math.sqrt(dx * dx + dy * dy);
+      let force = Math.min(150 / distance, 6);
+
+      let angle = Math.atan2(dy, dx);
+
+      particles[i].x -= Math.cos(angle) * force * 0.2;
+      particles[i].y -= Math.sin(angle) * force * 0.2;
+
+      particles[i].x += (particles[i].baseX - particles[i].x) * 0.03;
+      particles[i].y += (particles[i].baseY - particles[i].y) * 0.03;
+
+      ctx.beginPath();
+      ctx.arc(particles[i].x, particles[i].y, particles[i].size, 0, Math.PI * 2);
+      ctx.fillStyle = 'red';
+      ctx.fill();
+    }
+    requestAnimationFrame(animate);
+  }
+
+  animate();
+
+  window.addEventListener('resize', () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.x;
+    mouse.y = e.y;
+  });
+
+  // Muzika
+  const music = document.getElementById("bgMusic");
+  const btn = document.getElementById("toggleMusic");
+  let playing = true;
+
+  music.volume = 0.4;
+  music.play();
+
+  btn.addEventListener("click", () => {
+    if (playing) {
+      music.pause();
+      btn.textContent = "🔈 Luaj Muzikën";
+    } else {
+      music.play();
+      btn.textContent = "🔊 Ndalo Muzikën";
+    }
+    playing = !playing;
+  });
+
+  // Mesazhi Sekret
+  const msgBtn = document.getElementById("showMessage");
+  const secret = document.getElementById("secretMessage");
+
+  msgBtn.addEventListener("click", () => {
+    secret.style.display = "block";
+    setTimeout(() => {
+      secret.style.display = "none";
+    }, 4000);
+  });
+
+  // Ndaj ne WhatsApp
+  const shareBtn = document.getElementById("shareBtn");
+  shareBtn.addEventListener("click", () => {
+    const url = encodeURIComponent(window.location.href);
+    const text = encodeURIComponent("Shiko këtë faqe që krijova për ty ❤️: ");
+    window.open(`https://wa.me/?text=${text}${url}`, '_blank');
+  });
+
+  // Emoji dashurie
+  function createEmoji() {
+    const emoji = document.createElement('div');
+    emoji.classList.add('emoji');
+    emoji.innerText = "💖";
+    emoji.style.left = Math.random() * window.innerWidth + "px";
+    emoji.style.animationDuration = (Math.random() * 3 + 3) + "s";
+    document.body.appendChild(emoji);
+
+    setTimeout(() => {
+      emoji.remove();
+    }, 6000);
+  }
+
+  setInterval(createEmoji, 500);
+</script>
+
+</body>
+</html>
