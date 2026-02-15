@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heronjtë Tanë në Sport</title>
+<style>
+  /* Body & Background */
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #ffefef, #fff3f3);
+    color: #333;
+    overflow-x: hidden;
+  }
+
+  h1, h2 {
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  /* Container */
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+
+  /* Athlete Cards */
+  .card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin: 20px;
+    padding: 20px;
+    animation: slideUp 1.5s ease;
+    transition: transform 0.3s;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .card img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+    animation: pulse 2s infinite;
+  }
+
+  .card-info {
+    max-width: 600px;
+  }
+
+  .card-info h3 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .card-info p {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  /* Animations */
+  @keyframes fadeIn {
+    from {opacity:0;}
+    to {opacity:1;}
+  }
+
+  @keyframes slideUp {
+    from {transform: translateY(50px); opacity: 0;}
+    to {transform: translateY(0); opacity:1;}
+  }
+
+  @keyframes pulse {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.05);}
+    100% {transform: scale(1);}
+  }
+
+  /* Emoji decoration */
+  .emoji {
+    font-size: 1.2rem;
+    margin-right: 5px;
+  }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding: 20px;
+    background: #fcdede;
+    border-top: 1px solid #ffcaca;
+    animation: fadeIn 2s ease-in-out;
+  }
+
+</style>
+</head>
+<body>
+
+<h1>🏅 Heronjtë Tanë në Sport 🇦🇱</h1>
+<p style="text-align:center; animation: fadeIn 3s;">Njihuni me sportistët shqiptarë që kanë bërë krenar vendin!</p>
+
+<div class="container">
+
+  <!-- Lorik Cana -->
+  <div class="card">
+    <div class="card-info">
+      <h3>⚽ Lorik Cana</h3>
+      <p class="emoji">🏟 Sport: Futboll</p>
+      <p class="emoji">📅 Aktiv: 2003 - 2016</p>
+      <p class="emoji">⭐ Kapiten i Kombëtares Shqiptare me 93 ndeshje</p>
+      <p class="emoji">🌍 Lojërat ndërkombëtare dhe klube evropiane</p>
+    </div>
+  </div>
+
+  <!-- Armando Broja -->
+  <div class="card">
+    <div class="card-info">
+      <h3>⚽ Armando Broja</h3>
+      <p class="emoji">🏟 Sport: Futboll</p>
+      <p class="emoji">📅 Aktiv: 2019 - tani</p>
+      <p class="emoji">⭐ Sulmues i Kombëtares Shqiptare</p>
+      <p class="emoji">🌍 Lojërat e klubeve europiane dhe kombëtare</p>
+    </div>
+  </div>
+
+  <!-- Erkand Qerimaj -->
+  <div class="card">
+    <div class="card-info">
+      <h3>🏋️‍♂️ Erkand Qerimaj</h3>
+      <p class="emoji">🏟 Sport: Peshëngritje</p>
+      <p class="emoji">📅 Aktiv: 2005 - tani</p>
+      <p class="emoji">⭐ Medalje ndërkombëtare, Lojërat Olimpike</p>
+      <p class="emoji">🌍 Kategori: 73kg, Silver Mediterranean Games</p>
+    </div>
+  </div>
+
+  <!-- Distria Krasniqi -->
+  <div class="card">
+    <div class="card-info">
+      <h3>🥋 Distria Krasniqi</h3>
+      <p class="emoji">🏟 Sport: Xhudo</p>
+      <p class="emoji">📅 Aktiv: 2015 - tani</p>
+      <p class="emoji">⭐ Medalje olimpike dhe evropiane</p>
+      <p class="emoji">🌍 Kategori: -48kg dhe -52kg</p>
+    </div>
+  </div>
+
+  <!-- Luiza Gega -->
+  <div class="card">
+    <div class="card-info">
+      <h3>🏃‍♀️ Luiza Gega</h3>
+      <p class="emoji">🏟 Sport: Atletikë – Steeplechase</p>
+      <p class="emoji">📅 Aktiv: 2010 - tani</p>
+      <p class="emoji">⭐ Medalje Evropiane, Rekorde Kombëtare</p>
+      <p class="emoji">🌍 Lojërat Olimpike dhe gara ndërkombëtare</p>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  💻 Punoi: Profesor Orion Shehu | ©️ 2026
+</footer>
+
+</body>
+</html>
