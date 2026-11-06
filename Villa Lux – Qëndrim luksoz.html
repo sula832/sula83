@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Villa Lux – Qëndrim luksoz</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#faf7f2;--surface:#fff;--text:#1c1a17;--muted:#6b645a;--gold:#b08d57;--gold2:#8a6a36;--line:#e6dfd2;--hero1:#2a2118;--hero2:#6e5430;--on-gold:#fff;
+color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#13110e;--surface:#1c1914;--text:#f3ede2;--muted:#a79e8e;--gold:#d2ad6f;--gold2:#e6c88f;--line:#2e2920;--on-gold:#1c1a17;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#13110e;--surface:#1c1914;--text:#f3ede2;--muted:#a79e8e;--gold:#d2ad6f;--gold2:#e6c88f;--line:#2e2920;--on-gold:#1c1a17;color-scheme:dark}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Montserrat,system-ui,sans-serif;line-height:1.6}
+h1,h2,h3{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;margin:0}
+a{color:inherit}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;letter-spacing:.06em;color:var(--gold2);text-decoration:none}
+nav a{margin-left:18px;font-size:13px;text-decoration:none;color:var(--muted)}
+.hero{background:linear-gradient(135deg,var(--hero1),var(--hero2));color:#fff;padding:90px 0 80px;text-align:center}
+.hero p.k{letter-spacing:.3em;font-size:12px;color:#e6c88f;text-transform:uppercase}
+.hero h1{font-size:clamp(40px,8vw,76px);line-height:1.05;margin:10px 0 16px}
+.hero p{max-width:560px;margin:0 auto 28px;color:#eadfca}
+.btn{display:inline-block;border:0;cursor:pointer;background:var(--gold);color:var(--on-gold);padding:14px 26px;border-radius:2px;font:600 13px Montserrat,sans-serif;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.btn.o{background:transparent;border:1px solid var(--gold);color:var(--gold2)}
+.btn.wa{background:#1fa855;color:#fff}
+section{padding:64px 0}
+h2{font-size:38px;text-align:center;margin-bottom:8px}
+.sub{text-align:center;color:var(--muted);margin:0 auto 36px;max-width:520px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);padding:22px;border-radius:4px}
+.card b{display:block;font-family:"Cormorant Garamond",Georgia,serif;font-size:22px;color:var(--gold2)}
+.card span{color:var(--muted);font-size:14px}
+.gal{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.ph{height:200px;border-radius:4px;display:flex;align-items:flex-end;padding:14px;color:#fff;font-size:13px;letter-spacing:.08em}
+.ph:nth-child(1){background:linear-gradient(135deg,#3b2f21,#a88650)}
+.ph:nth-child(2){background:linear-gradient(135deg,#1f3a40,#6aa0a8)}
+.ph:nth-child(3){background:linear-gradient(135deg,#3a2530,#b07a8e)}
+.ph:nth-child(4){background:linear-gradient(135deg,#25301f,#8aa05f)}
+.book{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+@media(max-width:760px){.book{grid-template-columns:1fr}nav{display:none}}
+form{background:var(--surface);border:1px solid var(--line);padding:24px;border-radius:4px}
+label{display:block;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+input,select{width:100%;padding:12px;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:2px;font:15px Montserrat,sans-serif}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sum{margin-top:18px;border-top:1px solid var(--line);padding-top:14px;font-size:14px}
+.sum div{display:flex;justify-content:space-between;padding:3px 0}
+.sum .t{font-weight:600;font-size:18px;color:var(--gold2)}
+.btns{display:grid;gap:10px;margin-top:18px}
+#msg{margin-top:12px;font-size:13px;color:var(--gold2);min-height:20px}
+.list{list-style:none;padding:0;margin:0}
+.list li{padding:10px 0;border-bottom:1px solid var(--line)}
+.list li:before{content:"✦ ";color:var(--gold)}
+.rev{font-style:italic;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:30px 0;text-align:center;color:var(--muted);font-size:13px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#1fa855;color:#fff;border-radius:30px;padding:13px 20px;font:600 14px Montserrat,sans-serif;text-decoration:none;box-shadow:0 6px 20px rgba(0,0,0,.3)}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="logo" href="#top">VILLA LUX</a>
+<nav><a href="#detaje">Detaje</a><a href="#galeria">Galeria</a><a href="#rezervo">Rezervo</a><a href="#kontakt">Kontakt</a></nav></div></header>
+
+<div class="hero" id="top"><div class="wrap">
+<p class="k">Tiranë · Shqipëri</p>
+<h1>Luksi që e meriton</h1>
+<p>Apartament modern me pamje të mrekullueshme, dizajn elegant dhe shërbim 5 yje. Rezervo direkt, pa ndërmjetës dhe me çmimin më të mirë.</p>
+<a class="btn" href="#rezervo">Rezervo tani</a>
+</div></div>
+
+<section id="detaje"><div class="wrap">
+<h2>Çfarë të pret</h2><p class="sub">Çdo detaj është menduar për qëndrimin tënd perfekt.</p>
+<div class="grid">
+<div class="card"><b>4 Mysafirë</b><span>2 dhoma gjumi, 2 banjo moderne</span></div>
+<div class="card"><b>Wi‑Fi i shpejtë</b><span>Ideal edhe për punë në distancë</span></div>
+<div class="card"><b>Parking falas</b><span>Vend i sigurt për makinën tënde</span></div>
+<div class="card"><b>Check‑in i lehtë</b><span>Vetë‑check‑in 24/7 me kod</span></div>
+<div class="card"><b>Kuzhinë e plotë</b><span>Aparate premium, kafe e çaj</span></div>
+<div class="card"><b>Klimë &amp; Smart TV</b><span>Netflix, ngrohje dhe ftohje</span></div>
+</div></div></section>
+
+<section id="galeria" style="background:var(--surface)"><div class="wrap">
+<h2>Galeria</h2><p class="sub">Zëvendësoje me fotot e tua të vërteta.</p>
+<div class="gal"><div class="ph">SALLONI</div><div class="ph">DHOMA E GJUMIT</div><div class="ph">TERRACA</div><div class="ph">KUZHINA</div></div>
+</div></section>
+
+<section id="rezervo"><div class="wrap">
+<h2>Rezervo qëndrimin</h2><p class="sub">Zgjidh datat dhe konfirmo direkt, me kartë ose përmes WhatsApp.</p>
+<div class="book">
+<form id="f" onsubmit="return false">
+<div class="row"><div><label for="ci">Check‑in</label><input type="date" id="ci"></div>
+<div><label for="co">Check‑out</label><input type="date" id="co"></div></div>
+<label for="g">Mysafirë</label>
+<select id="g"><option>1</option><option selected>2</option><option>3</option><option>4</option></select>
+<label for="n">Emri i plotë</label><input id="n" placeholder="Emri Mbiemri" autocomplete="name">
+<label for="p">Telefoni</label><input id="p" type="tel" placeholder="+355 …" autocomplete="tel">
+<div class="sum">
+<div><span id="l1">€120 × 0 netë</span><span id="s1">€0</span></div>
+<div><span>Pastrimi</span><span id="s2">€25</span></div>
+<div class="t"><span>Totali</span><span id="s3">€0</span></div>
+</div>
+<div class="btns">
+<button class="btn" id="pay">Paguaj me kartë</button>
+<button class="btn wa" id="wa">Rezervo në WhatsApp</button>
+</div>
+<div id="msg"></div>
+</form>
+<div>
+<h3 style="font-size:28px;margin-bottom:10px">Pse direkt me ne?</h3>
+<ul class="list">
+<li>Çmimi më i mirë, pa komisione platforme</li>
+<li>Pagesë e sigurt me kartë bankare</li>
+<li>Përgjigje brenda pak minutash në WhatsApp</li>
+<li>Anulim falas deri 48 orë para ardhjes</li>
+</ul>
+<p class="rev" style="margin-top:22px">“Vend fantastik, shumë i pastër dhe pritje e shkëlqyer. Do të kthehemi sigurisht!” — Sarah, Gjermani ★★★★★</p>
+<p class="rev">“Pamje e bukur, lokacion perfekt. Përvojë luksoze.” — Marco, Itali ★★★★★</p>
+</div>
+</div></div></section>
+
+<section id="kontakt" style="background:var(--surface)"><div class="wrap" style="text-align:center">
+<h2>Na kontakto</h2><p class="sub">Ke pyetje? Na shkruaj kur të duash.</p>
+<a class="btn wa" id="wa2" href="#">WhatsApp +355 69 977 6550</a>
+</div></section>
+
+<footer><div class="wrap">© 2026 Villa Lux · Të gjitha të drejtat e rezervuara</div></footer>
+<a class="fab" id="fab" href="#">💬 WhatsApp</a>
+
+<script>
+var PHONE="355699776550", PRICE=120, CLEAN=25;
+var PAY_LINK=""; // Vendos këtu linkun e pagesës (p.sh. Stripe Payment Link)
+var $=function(i){return document.getElementById(i)};
+function waUrl(t){return "https://wa.me/"+PHONE+"?text="+encodeURIComponent(t)}
+["wa2","fab"].forEach(function(i){$(i).href=waUrl("Përshëndetje! Dua informacion për Villa Lux.")});
+var t=new Date().toISOString().slice(0,10);$("ci").min=t;$("co").min=t;
+function nights(){var a=new Date($("ci").value),b=new Date($("co").value);var n=Math.round((b-a)/864e5);return isNaN(n)||n<0?0:n}
+function calc(){var n=nights();$("l1").textContent="€"+PRICE+" × "+n+" netë";$("s1").textContent="€"+PRICE*n;$("s2").textContent="€"+(n?CLEAN:0);$("s3").textContent="€"+(n?PRICE*n+CLEAN:0)}
+["ci","co"].forEach(function(i){$(i).addEventListener("change",calc)});
+function ok(){if(!nights()){$("msg").textContent="Zgjidh datat e check‑in dhe check‑out.";return false}
+if(!$("n").value.trim()||!$("p").value.trim()){$("msg").textContent="Plotëso emrin dhe telefonin.";return false}return true}
+function text(){return "Përshëndetje! Dua të rezervoj Villa Lux.\nEmri: "+$("n").value+"\nTel: "+$("p").value+"\nCheck‑in: "+$("ci").value+"\nCheck‑out: "+$("co").value+"\nMysafirë: "+$("g").value+"\nTotali: "+$("s3").textContent}
+$("wa").onclick=function(){if(ok())window.open(waUrl(text()),"_blank")};
+$("pay").onclick=function(){if(!ok())return;
+if(PAY_LINK){window.location.href=PAY_LINK}
+else{$("msg").textContent="Pagesa me kartë po aktivizohet. Po të çojmë në WhatsApp për ta konfirmuar rezervimin.";setTimeout(function(){window.open(waUrl(text()+"\nDua të paguaj me kartë."),"_blank")},900)}};
+calc();
+</script>
+</body>
+</html>
