@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Stay | Premium Airbnb</title>
+    <link rel="stylesheet" href="airbnb.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="navbar">
+    <a href="#" class="logo">LUXURY<span>STAY</span></a>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#booking">Booking</a>
+    </nav>
+    <a href="https://wa.me/355699776550" class="nav-button">
+        Contact ↗️
+    </a>
+</header>
+<section class="hero" id="home">
+    <div class="hero-content">
+        <p class="subtitle">YOUR PRIVATE ESCAPE</p>
+        <h1>Luxury Living.<br>
+        <span>Unforgettable Moments.</span></h1>
+        <p class="description">
+            Discover a beautiful place where comfort meets elegance.
+            Experience a premium stay designed just for you.
+        </p>
+        <div class="hero-buttons">
+            <a href="#booking" class="btn-primary">
+                Book Your Stay ↗️
+            </a>
+            <a href="#gallery" class="btn-secondary">
+                Explore Property ↓
+            </a>
+        </div>
+    </div>
+    <div class="hero-image"></div>
+</section>
+<section class="features">
+    <div>
+        <h3>✦ Premium Comfort</h3>
+        <p>Beautifully designed spaces.</p>
+    </div>
+    <div>
+        <h3>⌂ Perfect Location</h3>
+        <p>Stay close to everything.</p>
+    </div>
+    <div>
+        <h3>♡ Personal Experience</h3>
+        <p>Hospitality at its finest.</p>
+    </div>
+</section>
+<section class="about" id="about">
+    <p class="subtitle">WELCOME TO LUXURY STAY</p>
+    <h2>Your home away<br>
+    <span>from home.</span></h2>
+    <p>
+        Enjoy a relaxing atmosphere, elegant interiors and
+        unforgettable moments during your stay.
+    </p>
+</section>
+<section class="gallery" id="gallery">
+    <div class="section-title">
+        <p class="subtitle">DISCOVER THE SPACE</p>
+        <h2>Designed for <span>your comfort.</span></h2>
+    </div>
+    <div class="gallery-grid">
+        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80">
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=800&q=80">
+    </div>
+</section>
+<section class="booking" id="booking">
+    <div class="booking-info">
+        <p class="subtitle">MAKE YOUR RESERVATION</p>
+        <h2>Your next stay<br>
+        <span>starts here.</span></h2>
+        <p>
+            Plan your perfect getaway.
+            Send us a booking request directly through WhatsApp.
+        </p>
+        <a href="https://wa.me/355699776550" class="btn-primary">
+            WhatsApp Us ↗️
+        </a>
+    </div>
+    <form id="bookingForm">
+        <h3>Reserve Your Stay</h3>
+        <label>Your Name</label>
+        <input type="text" id="name" placeholder="Full name" required>
+        <label>Check-in</label>
+        <input type="date" id="checkin" required>
+        <label>Check-out</label>
+        <input type="date" id="checkout" required>
+        <label>Guests</label>
+        <select id="guests">
+            <option>1 Guest</option>
+            <option selected>2 Guests</option>
+            <option>3 Guests</option>
+            <option>4 Guests</option>
+            <option>5+ Guests</option>
+        </select>
+        <button type="submit" class="btn-primary">
+            Request Booking ↗️
+        </button>
+        <button type="button" id="paymentButton" class="payment-button">
+            Pay by Card 💳
+        </button>
+        <p id="message"></p>
+    </form>
+</section>
+<footer>
+    <h3>LUXURY<span>STAY</span></h3>
+    <p>Designed for unforgettable experiences.</p>
+    <a href="https://wa.me/355699776550">
+        Contact us on WhatsApp
+    </a>
+    <p>©️ 2026 Luxury Stay. All rights reserved.</p>
+</footer>
+<script src="airbnb.js"></script>
+</body>
+</html>
